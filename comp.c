@@ -11,4 +11,5 @@ void main() {
     
     modificate(&ram, &latency);
     printf("%i %i\n", ram, latency);
+    printf("%i %i\n", &ram, &latency);
 }
