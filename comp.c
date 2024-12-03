@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+typedef struct {
+    double clck;
+    int cores;
+    long ram;
+    long flashMem;
+    long otpMem;
+} stm_spec;
+
 void modificate(int* ram, int* lat) {
     *ram = *ram - 1;
     *lat = *lat + 1;
