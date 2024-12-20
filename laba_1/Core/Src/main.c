@@ -59,6 +59,11 @@ void toggle_led(uint8_t index) {
 	HAL_Delay(500);
 	HAL_GPIO_TogglePin(GPIOD, leds[index]);
 }
+
+uint8_t is_button_pressed(void)
+{
+    return HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET;
+}
 /* USER CODE END 0 */
 
 /**
@@ -98,10 +103,17 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  for (int i = 0; i < 4; i++) {
-		  toggle_led(i);
-	  }
     /* USER CODE BEGIN 3 */
+	  if (is_button_pressed())
+	  {
+		  HAL_Delay(50);
+		  while (is_button_pressed());
+
+		  for (uint8_t i = 0; i < 4; i++)
+		  {
+			  toggle_led(i);
+		  }
+	  }
   }
   /* USER CODE END 3 */
 }
