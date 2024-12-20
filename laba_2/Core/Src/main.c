@@ -113,7 +113,7 @@ int main(void)
 	  {
 		  turn_off_leds();
 		  turn_on_led(i);
-		  for (j = 0; j < 100000; j++);
+		  for (j = 0; j < 50000; j++);
 	  }
   }
   /* USER CODE END 3 */
