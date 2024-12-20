@@ -43,6 +43,7 @@
 
 /* USER CODE BEGIN PV */
 uint16_t leds[] = {GPIO_PIN_12, GPIO_PIN_13, GPIO_PIN_14, GPIO_PIN_15};
+uint8_t mode = 0; // (0: по часовой стрелке, 1: против)
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,10 +110,12 @@ int main(void)
 		  HAL_Delay(50);
 		  while (is_button_pressed());
 
-		  for (uint8_t i = 0; i < 4; i++)
-		  {
-			  toggle_led(i);
-		  }
+		  mode = (mode + 1) % 2;
+	  }
+
+	  for (uint8_t i = 0; i < 4; i++)
+	  {
+		  toggle_led(mode == 0 ? i : 3 - i);
 	  }
   }
   /* USER CODE END 3 */
