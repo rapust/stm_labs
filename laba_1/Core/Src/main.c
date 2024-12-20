@@ -44,6 +44,7 @@
 /* USER CODE BEGIN PV */
 uint16_t leds[] = {GPIO_PIN_12, GPIO_PIN_13, GPIO_PIN_14, GPIO_PIN_15};
 uint8_t mode = 0; // (0: по часовой стрелке, 1: против)
+uint16_t delay = 500;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -57,7 +58,7 @@ static void MX_GPIO_Init(void);
 /* USER CODE BEGIN 0 */
 void toggle_led(uint8_t index) {
 	HAL_GPIO_TogglePin(GPIOD, leds[index]);
-	HAL_Delay(500);
+	HAL_Delay(delay);
 	HAL_GPIO_TogglePin(GPIOD, leds[index]);
 }
 
@@ -111,6 +112,7 @@ int main(void)
 		  while (is_button_pressed());
 
 		  mode = (mode + 1) % 2;
+		  delay = delay == 500 ? 200 : 500;
 	  }
 
 	  for (uint8_t i = 0; i < 4; i++)

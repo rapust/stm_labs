@@ -1,6 +1,6 @@
-main.c:58:6:toggle_led	1
-main.c:64:9:is_button_pressed	1
-main.c:74:5:main	5
-main.c:128:6:SystemClock_Config	3
-main.c:174:13:MX_GPIO_Init	1
-main.c:213:6:Error_Handler	1
+main.c:59:6:toggle_led	1
+main.c:65:9:is_button_pressed	1
+main.c:75:5:main	6
+main.c:130:6:SystemClock_Config	3
+main.c:176:13:MX_GPIO_Init	1
+main.c:215:6:Error_Handler	1
