@@ -62,6 +62,11 @@ void turn_on_led(uint8_t led_index)
 {
     GPIOD->ODR |= (1 << (12 + led_index));
 }
+
+uint8_t is_button_pressed(void)
+{
+    return (GPIOA->IDR & GPIO_IDR_ID0) != 0;
+}
 /* USER CODE END 0 */
 
 /**
@@ -98,6 +103,7 @@ int main(void)
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
 
 	GPIOD->MODER |= (1 << (12 * 2)) | (1 << (13 * 2)) | (1 << (14 * 2)) | (1 << (15 * 2));
+	GPIOA->MODER &= ~(3 << (0 * 2));
 	GPIOD->OTYPER = 0;
 	GPIOD->OSPEEDR = 0;
   /* USER CODE END 2 */
@@ -109,11 +115,14 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  for (i = 0; i < 4; i++)
+	  if (is_button_pressed())
 	  {
-		  turn_off_leds();
-		  turn_on_led(i);
-		  for (j = 0; j < 50000; j++);
+		  for (i = 0; i < 4; i++)
+		  {
+			  turn_off_leds();
+			  turn_on_led(i);
+			  for (j = 0; j < 50000; j++);
+		  }
 	  }
   }
   /* USER CODE END 3 */
