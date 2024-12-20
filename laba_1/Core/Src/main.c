@@ -42,7 +42,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint16_t leds[] = {GPIO_PIN_12, GPIO_PIN_13, GPIO_PIN_14, GPIO_PIN_15};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -54,7 +54,11 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void toggle_led(uint8_t index) {
+	HAL_GPIO_TogglePin(GPIOD, leds[index]);
+	HAL_Delay(500);
+	HAL_GPIO_TogglePin(GPIOD, leds[index]);
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,18 +98,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-	  HAL_Delay(500);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  HAL_Delay(500);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-	  HAL_Delay(500);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-	  HAL_Delay(500);
-	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+	  for (int i = 0; i < 4; i++) {
+		  toggle_led(i);
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
