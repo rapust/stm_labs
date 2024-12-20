@@ -53,15 +53,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void turn_off_leds(void)
-{
-    GPIOD->ODR &= ~((1 << 12) | (1 << 13) | (1 << 14) | (1 << 15));
-}
 
-void turn_on_led(uint8_t led_index)
-{
-    GPIOD->ODR |= (1 << (12 + led_index));
-}
 /* USER CODE END 0 */
 
 /**
@@ -93,11 +85,10 @@ int main(void)
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
 	uint32_t i;
-	uint32_t j;
 
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
 
-	GPIOD->MODER |= (1 << (12 * 2)) | (1 << (13 * 2)) | (1 << (14 * 2)) | (1 << (15 * 2));
+	GPIOD->MODER = 0x55000000;
 	GPIOD->OTYPER = 0;
 	GPIOD->OSPEEDR = 0;
   /* USER CODE END 2 */
@@ -109,12 +100,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  for (i = 0; i < 4; i++)
-	  {
-		  turn_off_leds();
-		  turn_on_led(i);
-		  for (j = 0; j < 100000; j++);
-	  }
+	  GPIOD->ODR = 0xF000;
+	  for (i = 0; i < 500000; i++);
+	  GPIOD->ODR = 0x0000;
+	  for (i = 0; i < 500000; i++);
   }
   /* USER CODE END 3 */
 }
