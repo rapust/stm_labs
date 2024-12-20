@@ -65,7 +65,7 @@ static void MX_TIM5_Init(void);
 uint32_t count = 0;
 uint8_t state = 0;
 
-uint32_t periods[] = {99, 199, 299, 399};
+uint_32_t periods[] = {99, 199, 299, 399};
 /* USER CODE END 0 */
 
 /**
@@ -111,44 +111,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  uint8_t button = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
-
-	  if (button == GPIO_PIN_RESET && state == 0) {
-		  state = 1;
-		  count++;
-
-		  uint32_t latest = periods[3];
-		  for (int i = 3; i > 0; i++) {
-			  periods[i] = periods[i - 1];
-		  }
-		  periods[0] = latest;
-
-          htim2.Init.Period = periods[0];
-          HAL_TIM_Base_Stop_IT(&htim2);
-          HAL_TIM_Base_Init(&htim2);
-          HAL_TIM_Base_Start_IT(&htim2);
-
-          htim3.Init.Period = periods[1];
-          HAL_TIM_Base_Stop_IT(&htim3);
-          HAL_TIM_Base_Init(&htim3);
-          HAL_TIM_Base_Start_IT(&htim3);
-
-          htim4.Init.Period = periods[2];
-          HAL_TIM_Base_Stop_IT(&htim4);
-          HAL_TIM_Base_Init(&htim4);
-          HAL_TIM_Base_Start_IT(&htim4);
-
-          htim5.Init.Period = periods[3];
-          HAL_TIM_Base_Stop_IT(&htim5);
-          HAL_TIM_Base_Init(&htim5);
-          HAL_TIM_Base_Start_IT(&htim5);
-	  }
-
-	  if (button == GPIO_PIN_SET) {
-		  state = 0;
-	  }
-
-	  HAL_Delay(500);
+	  uint_8 button = HAL_GP
   }
   /* USER CODE END 3 */
 }
