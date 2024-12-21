@@ -101,7 +101,10 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_Base_Start_IT(&htim4);
+  HAL_TIM_Base_Start_IT(&htim5);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,17 +114,17 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  uint8_t button = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+      uint8_t button = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
 
-	  if (button == GPIO_PIN_RESET && state == 0) {
-		  state = 1;
-		  count++;
+      if (button == GPIO_PIN_RESET && state == 0) {
+          state = 1;
+          count++;
 
-		  uint32_t latest = periods[3];
-		  for (int i = 3; i > 0; i++) {
-			  periods[i] = periods[i - 1];
-		  }
-		  periods[0] = latest;
+          uint32_t latest = periods[3];
+          for (int i = 3; i > 0; i--) {
+              periods[i] = periods[i - 1];
+          }
+          periods[0] = latest;
 
           htim2.Init.Period = periods[0];
           HAL_TIM_Base_Stop_IT(&htim2);
@@ -142,13 +145,13 @@ int main(void)
           HAL_TIM_Base_Stop_IT(&htim5);
           HAL_TIM_Base_Init(&htim5);
           HAL_TIM_Base_Start_IT(&htim5);
-	  }
+      }
 
-	  if (button == GPIO_PIN_SET) {
-		  state = 0;
-	  }
+      if (button == GPIO_PIN_SET) {
+          state = 0;
+      }
 
-	  HAL_Delay(500);
+      HAL_Delay(50);
   }
   /* USER CODE END 3 */
 }
@@ -444,3 +447,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
