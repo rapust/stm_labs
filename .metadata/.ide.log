@@ -1,33 +1,8 @@
-2024-12-21 00:04:26,157 [INFO] NvicTabbedPanel:220 - Cannot restore the selected Tab for NVIC
-2024-12-21 00:05:21,293 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 748135968 Bytes (952107008)
-2024-12-21 00:05:23,009 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 772253216 Bytes (952107008)
-2024-12-21 00:05:28,365 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 664358960 Bytes (952107008)
-2024-12-21 00:05:28,567 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
-2024-12-21 00:05:28,567 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
-2024-12-21 00:05:28,567 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
-2024-12-21 00:05:28,568 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
-2024-12-21 00:05:28,569 [INFO] CodeGenerator:793 - code generatio: config db path: C:\ST\STM32CubeIDE_1.12.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.8.0.202302231600\\db\
-2024-12-21 00:05:28,696 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\MXTmpFiles\license.tmp_save
-2024-12-21 00:05:28,826 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\MXTmpFiles\license.tmp
-2024-12-21 00:05:28,845 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\MXTmpFiles\gpio.tmp_save
-2024-12-21 00:05:28,954 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\MXTmpFiles\gpio.tmp
-2024-12-21 00:05:28,991 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\Core\Src\stm32f4xx_it.c_save
-2024-12-21 00:05:29,302 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\Core\Src\stm32f4xx_it.c
-2024-12-21 00:05:29,319 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\Core\Inc\stm32f4xx_it.h_save
-2024-12-21 00:05:29,424 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\Core\Inc\stm32f4xx_it.h
-2024-12-21 00:05:29,452 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\Core\Src\stm32f4xx_hal_msp.c_save
-2024-12-21 00:05:29,554 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\Core\Src\stm32f4xx_hal_msp.c
-2024-12-21 00:05:29,559 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\MXTmpFiles\system.tmp_save
-2024-12-21 00:05:29,619 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\MXTmpFiles\system.tmp
-2024-12-21 00:05:29,643 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\Core\Inc\stm32f4xx_hal_conf.h_save
-2024-12-21 00:05:29,773 [INFO] CodeEngine:335 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\Core\Inc\stm32f4xx_hal_conf.h
-2024-12-21 00:05:29,822 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\Core\Inc\main.h_save
-2024-12-21 00:05:29,906 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\Core\Inc\main.h
-2024-12-21 00:05:29,921 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\georg\Documents\stm_labs\laba_3\Core\Src\main.c_save
-2024-12-21 00:05:30,033 [INFO] CodeEngine:279 - Generated code: C:\Users\georg\Documents\stm_labs\laba_3\Core\Src\main.c
-2024-12-21 00:05:30,590 [INFO] ProjectBuilder:2996 - Time for Copy HAL[1] : 184mS.
-2024-12-21 00:05:30,593 [INFO] ProjectBuilder:4304 - Project Generator version: 3.19.2
-2024-12-21 00:05:30,825 [INFO] ConfigFileManager:1483 - The Die is : DIE413
-2024-12-21 00:05:32,110 [INFO] ProjectBuilder:4505 - Time for Generating toolchain IDE Files: 1517mS.
-2024-12-21 00:05:32,111 [INFO] ProjectBuilder:2867 - Time for Copy CMSIS : 0mS.
-2024-12-21 00:05:32,119 [INFO] ProjectBuilder:2867 - Time for Copy CMSIS : 0mS.
+2024-12-21 18:07:10,648 [INFO] Activator:176 - 
+
+
+2024-12-21 18:07:10,650 [INFO] Activator:177 - !SESSION log4j initialized
+2024-12-21 18:07:13,419 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2024-12-21 18:08:01,685 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2024-12-21 18:08:01,685 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2024-12-21 18:08:01,687 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
